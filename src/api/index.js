@@ -5,9 +5,15 @@ const url = "https://covid19.mathdro.id/api";
 export const fetchData = async (country) => {
   let changeableUrl = url;
 
-  if (country && country !== "global") {
+  // If country is an empty string, it will be false
+  if (country) {
     changeableUrl = `${url}/countries/${country}`;
   }
+
+  // This is also a solution
+  // if (country && country !== "global") {
+  //   changeableUrl = `${url}/countries/${country}`;
+  // }
 
   try {
     // Method one
